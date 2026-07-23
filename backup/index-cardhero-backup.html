@@ -236,48 +236,6 @@
   ::-webkit-scrollbar{width:9px;}
   ::-webkit-scrollbar-thumb{background:rgba(26,26,60,.18);border-radius:99px;}
 </style>
-
-<style>
-/* ===== BGM HERO OVERRIDES ===== */
-#hero.bgm{position:relative;min-height:100svh;padding:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#08080f;}
-.hero-bg{position:absolute;inset:0;}
-.hero-bg iframe{position:absolute;bottom:0;left:50%;width:max(100vw,178vh);height:max(56.25vw,102vh);transform:translateX(-50%);border:0;pointer-events:none;}
-.hero-veil{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 900px 600px at 50% 40%, rgba(8,8,15,.3), rgba(8,8,15,.56));}
-#hero.bgm .vshield{position:absolute;inset:0;z-index:2;cursor:pointer;}
-.bgm-center{position:relative;z-index:3;text-align:center;max-width:840px;padding:0 28px;pointer-events:none;transform:translateY(-7vh);text-shadow:0 2px 28px rgba(0,0,0,.55);}
-.bgm-center .handnote{color:#fff;}
-.bgm-center .handnote em{color:#ff8fb3;}
-.bgm-center h1{color:#fff;}
-.bgm-center h1 .grad{background:linear-gradient(95deg,#c9b8ff,#7ee8dc);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.sig-name{font-family:'Nanum Brush Script',cursive;font-size:clamp(26px,3.2vw,36px);color:#fff;transform:rotate(-1.2deg);margin-top:14px;opacity:.95;}
-.bgm-center .creed{color:rgba(255,255,255,.78);margin-top:18px;}
-.bgm-center .creed b{color:#fff;}
-.bgm-center .hero-tags{justify-content:center;}
-.bgm-center .htag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.85);}
-.fplayer{
-  position:absolute;right:26px;bottom:26px;z-index:4;width:256px;
-  background:rgba(10,10,18,.68);backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,.16);border-radius:18px;
-  padding:14px 14px 8px;color:#fff;
-}
-.fp-k{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.22em;color:rgba(255,255,255,.5);display:block;}
-.fplayer #nptitle{display:block;font-size:12.5px;font-weight:600;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff;}
-.fp-ctl{display:flex;gap:7px;margin-top:10px;}
-.fp-ctl #soundbtn{position:static;width:34px;height:34px;border-radius:99px;border:none;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;animation:pulse2 2.2s ease-in-out infinite;}
-.fp-ctl .cbtn{width:34px;height:34px;background:transparent;color:#fff;border-color:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;}
-.fp-ctl .cbtn:hover{background:#fff;color:#0a0a12;}
-.fplayer .tracks{display:block;background:transparent;border-top:none;margin-top:10px;}
-.fplayer .trk{display:flex;align-items:center;gap:9px;padding:8px 2px;background:transparent;border-top:1px solid rgba(255,255,255,.09);}
-.fplayer .trk:hover{background:rgba(255,255,255,.06);}
-.fplayer .trk img{width:52px;aspect-ratio:16/9;border-radius:6px;flex-shrink:0;}
-.fplayer .trk .tt{font-size:11px;color:#fff;margin-top:0;flex:1;}
-.fplayer .trk .pl{display:none;}
-.fplayer .trk.on .tt{color:#c9b8ff;}
-@media(max-width:760px){
-  .fplayer{right:12px;left:auto;bottom:12px;width:210px;padding:11px 11px 5px;}
-  .fplayer .trk img{width:44px;}
-}
-</style>
 </head>
 <body>
 
@@ -288,62 +246,68 @@
   <div class="wrap">
     <a class="logo" href="#top">Louie<small>NATURAL BUILDER · MANIFESTOR &amp; CREATOR</small></a>
     <div class="menu">
-      <a href="#dir">Projects</a>
+      <a href="#dir">프로젝트</a>
       <a href="#f-supernotes">SuperNotes</a>
       <a href="#f-mind">Mind</a>
       <a href="#f-hylocal">Hylocal</a>
-      <a href="footsteps.html" style="color:var(--ink);font-weight:600;">My Path ↗</a>
+      <a href="footsteps.html" style="color:var(--ink);font-weight:600;">걸어온 길 ↗</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO : BGM TEST -->
-<header id="hero" class="bgm">
-  <div class="hero-bg"><div id="ytp"></div></div>
-  <div class="hero-veil"></div>
-  <div class="vshield" id="vshield"></div>
-  <div class="bgm-center">
-    <span class="handnote">이런 커리어는, 세상에 <em>하나뿐</em>입니다.</span>
-    <h1>Natural <span class="grad">Builder</span>,<br>
-      <span class="stroke">Manifestor
-        <svg viewBox="0 0 300 16" preserveAspectRatio="none">
-          <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#b39dff" stop-opacity=".7"/>
-            <stop offset=".55" stop-color="#6fe8d8" stop-opacity=".6"/>
-            <stop offset="1" stop-color="#ff8fb3" stop-opacity=".55"/>
-          </linearGradient></defs>
-          <path d="M4 11 C 60 4, 150 14, 296 7" stroke="url(#sg)" stroke-width="9" fill="none" stroke-linecap="round"/>
-        </svg>
-      </span> &amp; Creator.
-    </h1>
-    <div class="sig-name">Louie Hwang</div>
-    <p class="creed">
-      AI·블록체인 스타트업을 <b>6번 이상</b> 창업·공동창업했고, 삼성 VC에서 스타트업 <b>220개</b>를 키웠고,<br>
-      <b>12개</b>의 앱과 서비스를 직접 만들었고, <b>블록체인 저서</b>를 출간했고,<br>
-      <b>5년째</b> 마음을 가르치고, <b>2000년부터</b> 음악을 만들어왔습니다.
-    </p>
-    <div class="hero-tags">
-      <span class="htag">INVESTOR</span>
-      <span class="htag">FOUNDER</span>
-      <span class="htag">BUILDER</span>
-      <span class="htag">AUTHOR</span>
-      <span class="htag">MONK</span>
-      <span class="htag">MUSICIAN</span>
+<!-- HERO -->
+<header id="hero">
+  <div class="wrap hero-grid">
+    <div class="player-card rv in">
+      <div class="frame">
+        <div id="ytp"></div>
+        <div class="vshield" id="vshield"></div>
+        <button id="soundbtn">🔊 탭해서 소리 켜기</button>
+      </div>
+      <div class="np">
+        <div style="min-width:0;">
+          <b id="nptitle" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Seige — 음악을 불러오는 중…</b>
+          <span>NOW PLAYING · SEIGE</span>
+        </div>
+        <div class="ctl">
+          <button class="cbtn" id="btnPP" title="재생/일시정지">⏸</button>
+          <button class="cbtn" id="btnNext" title="다음 곡">⏭</button>
+        </div>
+        <a class="yt" href="https://www.youtube.com/@mcseige" target="_blank" rel="noopener" style="margin-left:0;">↗</a>
+      </div>
+      <div class="tracks" id="tracks"></div>
+    </div>
+    <div>
+      <span class="handnote">이런 커리어는, 세상에 <em>하나뿐</em>입니다.</span>
+      <h1>Natural <span class="grad">Builder</span>,<br>
+        <span class="stroke">Manifestor
+          <svg viewBox="0 0 300 16" preserveAspectRatio="none">
+            <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#7c4dff" stop-opacity=".5"/>
+              <stop offset=".55" stop-color="#00b8a9" stop-opacity=".45"/>
+              <stop offset="1" stop-color="#ff4081" stop-opacity=".4"/>
+            </linearGradient></defs>
+            <path d="M4 11 C 60 4, 150 14, 296 7" stroke="url(#sg)" stroke-width="9" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span> &amp; Creator.
+      </h1>
+      <p class="creed">
+        삼성 VC에서 스타트업 <b>220개</b>를 키웠고,<br>
+        AI·블록체인 스타트업을 <b>6번 이상</b> 창업·공동창업했고,<br>
+        <b>12개</b>의 앱과 서비스를 직접 만들었고, <b>블록체인 저서</b>를 출간했고,<br>
+        <b>5년째</b> 마음을 가르치고, <b>2000년부터</b> 음악을 만들어왔습니다.<br>
+        <b>전부 진짜입니다 — 아래에서 직접 확인하세요.</b>
+      </p>
+      <div class="hero-tags">
+        <span class="htag">INVESTOR</span>
+        <span class="htag">FOUNDER ×6</span>
+        <span class="htag">BUILDER</span>
+        <span class="htag">AUTHOR</span>
+        <span class="htag">MONK</span>
+        <span class="htag">MUSICIAN</span>
+      </div>
     </div>
   </div>
-  <aside class="fplayer">
-    <div class="fp-head">
-      <span class="fp-k">NOW PLAYING · SEIGE</span>
-    </div>
-    <b id="nptitle">Seige — 음악을 불러오는 중…</b>
-    <div class="fp-ctl">
-      <button id="soundbtn" title="소리 켜기" aria-label="소리 켜기"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 9v6h4l5 5V4L7 9H3z" fill="#fff"/><line x1="16.5" y1="9.5" x2="21" y2="14" stroke="#fff" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="9.5" x2="16.5" y2="14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
-      <button class="cbtn" id="btnPP" title="재생/일시정지">⏸</button>
-      <button class="cbtn" id="btnNext" title="다음 곡">⏭</button>
-      <button class="cbtn" id="btnYT" title="유튜브에서 보기"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></button>
-    </div>
-    <div class="tracks" id="tracks"></div>
-  </aside>
 </header>
 
 <div class="wrap">
@@ -443,9 +407,6 @@
         </a>
       </div>
     </div>
-  </div>
-  <div class="rv" style="text-align:center;margin-top:60px;">
-    <a class="btn pri" href="footsteps.html">My Path — 걸어온 길 전체 보기 →</a>
   </div>
 </section>
 
@@ -595,11 +556,6 @@ document.getElementById('btnPP').addEventListener('click',()=>{
   try{(ytp.getPlayerState()===1)?ytp.pauseVideo():ytp.playVideo();}catch(e){}
 });
 document.getElementById('btnNext').addEventListener('click',()=>{try{ytp.nextVideo();unmuteNow();}catch(e){}});
-document.getElementById('btnYT').addEventListener('click',()=>{
-  let u='https://www.youtube.com/@mcseige';
-  try{const d=ytp.getVideoData();if(d&&d.video_id)u='https://www.youtube.com/watch?v='+d.video_id;}catch(e){}
-  window.open(u,'_blank');
-});
 </script>
 </body>
 </html>
