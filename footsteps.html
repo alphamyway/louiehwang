@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naturally Built — 우주의 주파수에 발맞춰 걸어온 길 · Louie Hwang</title>
+<meta name="description" content="2008년 책 한 권에서 시작해, 220개 스타트업을 키우고, 12개의 프로덕트를 지었습니다. 우주의 주파수에 발맞춰 걸어온 길.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Naturally Built — 걸어온 길 · Louie Hwang">
+<meta property="og:description" content="우주의 주파수에 발맞춰 걸어온 길. 220개 스타트업 · 12개 프로덕트 · 베스트셀러 · 5년의 커뮤니티.">
+<meta property="og:image" content="https://louiehwang.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c4dff'/%3E%3Cstop offset='1' stop-color='%2300c4b4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='serif' font-weight='900' font-size='30' fill='white' text-anchor='middle'%3E루%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Serif+KR:wght@300;600;900&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbfaf6; --ink:#1a1a22; --dim:#666a7a; --faint:#9a9dac;
+    --line:rgba(26,26,60,.09); --card:#ffffff;
+    --violet:#7c4dff; --teal:#00b8a9; --pink:#ff4081; --amber:#f59e0b; --lime:#84a800;
+    --brush:linear-gradient(95deg,#7c4dff 5%,#00b8a9 55%,#ff4081 105%);
+    --shadow:0 14px 44px rgba(50,50,110,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Noto Serif KR',serif;}
+  #amb{
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(ellipse 720px 520px at 84% 4%, rgba(124,77,255,.09), transparent 62%),
+      radial-gradient(ellipse 640px 480px at 6% 96%, rgba(0,184,169,.08), transparent 62%),
+      radial-gradient(ellipse 520px 380px at 50% 50%, rgba(255,64,129,.04), transparent 62%);
+  }
+  .page{position:relative;z-index:1;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,246,.8);backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;height:62px;gap:28px;}
+  .logo{font-family:'Noto Serif KR',serif;font-weight:900;font-size:18px;color:var(--ink);text-decoration:none;}
+  .logo small{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:8.5px;letter-spacing:.2em;color:var(--faint);margin-left:10px;}
+  nav .back{margin-left:auto;font-size:13px;color:var(--dim);text-decoration:none;transition:color .2s;}
+  nav .back:hover{color:var(--ink);}
+
+  header{padding:96px 0 30px;text-align:center;}
+  .handnote{
+    font-family:'Nanum Brush Script',cursive;font-size:clamp(24px,3.2vw,34px);
+    color:var(--ink);transform:rotate(-1.2deg);display:inline-block;margin-bottom:10px;
+  }
+  .handnote em{font-style:normal;color:var(--violet);}
+  h1{
+    font-family:'Noto Serif KR',serif;font-weight:900;
+    font-size:clamp(36px,6.4vw,62px);line-height:1.3;
+  }
+  h1 .grad{background:var(--brush);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  header p{margin-top:18px;color:var(--dim);font-size:14.5px;line-height:2;}
+  header p b{color:var(--ink);}
+  .hero-k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.3em;color:var(--faint);margin-top:22px;}
+
+  /* ---------- CHAPTER ---------- */
+  .chapter{padding:90px 0 0;}
+  .ch-head{display:flex;align-items:center;gap:16px;margin-bottom:10px;}
+  .ch-head .no{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.32em;white-space:nowrap;}
+  .ch-head::after{content:'';flex:1;height:1px;background:var(--line);}
+  .ch-title{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(24px,3.6vw,34px);margin-bottom:6px;}
+  .ch-sub{color:var(--dim);font-size:13.5px;line-height:1.8;margin-bottom:6px;}
+  .c-now .no{color:#c07a00;}
+  .c-mind .no{color:var(--violet);}
+  .c-build .no{color:var(--teal);}
+  .c-vc .no{color:var(--lime);}
+
+  /* ---------- 3-COLUMN TIMELINE : 좌 UI / 중앙 연도축 / 우 설명 ---------- */
+  .tl{margin-top:36px;}
+  .entry{
+    display:grid;grid-template-columns:300px 120px 1fr;gap:0 26px;
+    align-items:center;position:relative;padding:26px 0;
+  }
+  /* 중앙 연도축 */
+  .spine{
+    position:relative;height:100%;min-height:120px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .spine::before{
+    content:'';position:absolute;top:-26px;bottom:-26px;left:50%;width:2px;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg,rgba(124,77,255,.28),rgba(0,184,169,.28),rgba(255,64,129,.2));
+  }
+  .entry:first-of-type .spine::before{top:8px;}
+  .entry:last-of-type .spine::before{bottom:8px;}
+  .spine .dot{
+    position:relative;z-index:2;width:15px;height:15px;border-radius:99px;
+    background:var(--paper);border:2px solid var(--violet);
+    box-shadow:0 0 0 5px rgba(124,77,255,.12);
+  }
+  .c-now .spine .dot{border-color:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.14);}
+  .c-mind .spine .dot{border-color:var(--violet);box-shadow:0 0 0 5px rgba(124,77,255,.13);}
+  .c-build .spine .dot{border-color:var(--teal);box-shadow:0 0 0 5px rgba(0,184,169,.13);}
+  .c-vc .spine .dot{border-color:var(--lime);box-shadow:0 0 0 5px rgba(132,168,0,.14);}
+  .spine .yr{
+    margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.1em;color:var(--dim);text-align:center;line-height:1.6;white-space:nowrap;
+  }
+
+  /* 좌측 UI */
+  .ui{
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:var(--card);box-shadow:var(--shadow);text-decoration:none;display:block;
+    transition:transform .22s;
+  }
+  a.ui:hover{transform:translateY(-4px);}
+  .ui .bar{
+    display:flex;align-items:center;gap:6px;height:28px;padding:0 11px;
+    border-bottom:1px solid var(--line);background:rgba(26,26,60,.025);
+  }
+  .ui .bar i{width:7px;height:7px;border-radius:99px;background:rgba(26,26,60,.12);}
+  .ui .bar .url{margin-left:6px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--faint);}
+  .ui .shot{position:relative;height:172px;overflow:hidden;background:#fff;}
+  .ui .shot iframe{width:250%;height:250%;border:0;transform:scale(.4);transform-origin:0 0;pointer-events:none;}
+  /* 레거시 커버 아트 */
+  .ui .art{
+    height:200px;display:flex;align-items:center;justify-content:center;position:relative;
+    font-family:'Noto Serif KR',serif;font-weight:900;font-size:26px;color:#fff;
+    text-shadow:0 2px 24px rgba(0,0,0,.28);
+  }
+  .ui .art small{
+    position:absolute;bottom:12px;left:14px;
+    font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:8px;
+    letter-spacing:.2em;color:rgba(255,255,255,.75);
+  }
+  .a-health{background:linear-gradient(140deg,#5e35b1,#7c4dff 60%,#b388ff);}
+  .a-food{background:linear-gradient(140deg,#00695c,#00b8a9 60%,#69f0dc);}
+  .a-ip{background:linear-gradient(140deg,#ad1457,#ff4081 60%,#ff80ab);}
+  .a-toon{background:linear-gradient(140deg,#4527a0,#5e6bff 60%,#8c9eff);}
+  .a-millim{background:linear-gradient(140deg,#01579b,#0288d1 60%,#4fc3f7);}
+  .a-meta{background:linear-gradient(140deg,#37474f,#607d8b 60%,#b0bec5);}
+  .a-dapp{background:linear-gradient(140deg,#bf360c,#ff7043 60%,#ffab91);}
+  .a-browser{background:linear-gradient(140deg,#311b92,#7c4dff 55%,#00b8a9);}
+  .a-vc{background:linear-gradient(140deg,#33691e,#84a800 60%,#d9ff6e);}
+  .a-seed{background:linear-gradient(140deg,#4a148c,#7c4dff 50%,#ff4081);}
+  .a-book{background:linear-gradient(140deg,#1a1a22,#4e4e5c 60%,#8f92a8);}
+  .a-ai{background:linear-gradient(140deg,#e65100,#f59e0b 60%,#ffd180);}
+
+  /* 우측 설명 */
+  .txt h3{
+    font-family:'Noto Serif KR',serif;font-weight:900;
+    font-size:clamp(20px,2.6vw,26px);line-height:1.4;
+    display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  }
+  .txt h3 a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;transition:border .2s;}
+  .txt h3 a:hover{border-bottom-color:var(--dim);}
+  .txt h3 .out{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);}
+  .cat{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.22em;color:var(--faint);margin-top:7px;}
+  .txt p{font-size:13.5px;color:var(--dim);line-height:1.9;margin-top:10px;max-width:480px;}
+  .txt p b{color:var(--ink);font-weight:600;}
+  .bds{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;}
+  .bd{
+    font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;
+    padding:4px 10px;border-radius:99px;border:1px solid var(--line);color:var(--dim);background:var(--card);
+  }
+  .bd.live{color:#00947f;border-color:rgba(0,184,169,.4);}
+  .bd.build{color:#c07a00;border-color:rgba(245,158,11,.4);}
+  .bd.star{color:#c2185b;border-color:rgba(255,64,129,.35);}
+  .bd.gold{color:#6b8500;border-color:rgba(132,168,0,.4);}
+
+  @media(max-width:920px){
+    .entry{grid-template-columns:1fr;gap:14px;padding:34px 0;}
+    .spine{flex-direction:row;gap:12px;min-height:auto;justify-content:flex-start;}
+    .spine::before{display:none;}
+    .spine .yr{margin-top:0;}
+    .ui{max-width:420px;}
+  }
+
+  footer{padding:130px 0 80px;text-align:center;}
+  footer .brush{
+    font-family:'Nanum Brush Script',cursive;font-size:clamp(26px,3.4vw,36px);
+    color:var(--ink);transform:rotate(-1deg);display:inline-block;line-height:1.8;
+  }
+  footer .sig{margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:var(--faint);}
+  footer .home{
+    display:inline-block;margin-top:32px;text-decoration:none;
+    font-size:13px;font-weight:600;color:#fbfaf6;background:var(--ink);
+    padding:12px 24px;border-radius:99px;transition:transform .2s;
+  }
+  footer .home:hover{transform:translateY(-2px);}
+
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .rv.in{opacity:1;transform:none;}
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-thumb{background:rgba(26,26,60,.18);border-radius:99px;}
+</style>
+</head>
+<body>
+
+<div id="amb"></div>
+<div class="page">
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">Louie<small>NATURAL BUILDER · MANIFESTOR &amp; CREATOR</small></a>
+    <a class="back" href="index.html">← 홈으로</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="handnote">우주의 <em>주파수</em>에 발을 맞추며,</span>
+    <h1 class="serif">Naturally <span class="grad">Built</span>.</h1>
+    <p>억지로 만든 적 없습니다. 에너지와 파동이 이끄는 대로 걷다 보니 —<br><b>220개의 스타트업</b>, <b>12개의 프로덕트</b>, 한 권의 책, 그리고 5년의 커뮤니티가 남았습니다.</p>
+    <div class="hero-k">IN TUNE WITH THE UNIVERSE — SINCE 2008</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- CHAPTER 4 : NOW -->
+<section class="chapter c-now">
+  <div class="ch-head rv"><span class="no">CHAPTER 4 — NOW BUILDING</span></div>
+  <div class="rv"><div class="ch-title serif">지금 짓는 것들</div><div class="ch-sub">AI의 시대 — 로컬과 인간을 연결하는 도구들.</div></div>
+  <div class="tl">
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">in the lab</span></div>
+        <div class="art a-ai">AI Visual Studio<small>SHORT-FORM ENGINE</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2026<br>NOW</span></div>
+      <div class="txt">
+        <h3>AI Visual Studio</h3>
+        <div class="cat">AI · SHORT-FORM</div>
+        <p>뷰티·병원을 위한 AI 기반 숏폼 제작 서비스. 조용히 자라는 중.</p>
+        <div class="bds"><span class="bd build">BUILDING</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <a class="ui" href="https://hylocal.vercel.app" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">hylocal.vercel.app</span></div>
+        <div class="shot"><iframe src="https://hylocal.vercel.app" loading="lazy" title="Hylocal"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2025<br>NOW</span></div>
+      <div class="txt">
+        <h3><a href="https://hylocal.vercel.app" target="_blank" rel="noopener">Hylocal</a> <span class="out">↗</span></h3>
+        <div class="cat">AI · HYPERLOCAL OS · POWERED BY HYPERRAIL</div>
+        <p>AI가 지역을 발견하고, 사람들이 그 지역이 만든 것을 그 자리에서 만나는 <b>하이퍼로컬 OS</b>. CSP 지역 벤처스튜디오.</p>
+        <div class="bds"><span class="bd build">BUILDING</span><span class="bd">CSP VENTURE STUDIO</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <a class="ui" href="https://louiemind.com/mindsaju" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">louiemind.com/mindsaju</span></div>
+        <div class="shot"><iframe src="https://louiemind.com/mindsaju" loading="lazy" title="MindSaju"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2025</span></div>
+      <div class="txt">
+        <h3><a href="https://louiemind.com/mindsaju" target="_blank" rel="noopener">MindSaju</a> <span class="out">↗</span></h3>
+        <div class="cat">命理 × AI</div>
+        <p>명리학으로 타고난 코드를 읽고, AI로 해석하는 사주·궁합 분석. <b>마음 연구가 인간 연구로 넓어진 지점.</b></p>
+        <div class="bds"><span class="bd live">LIVE</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <a class="ui" href="https://superpwrd.me" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">superpwrd.me</span></div>
+        <div class="shot"><iframe src="https://superpwrd.me" loading="lazy" title="SuperNotes"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2025</span></div>
+      <div class="txt">
+        <h3><a href="https://superpwrd.me" target="_blank" rel="noopener">SuperNotes</a> <span class="out">↗</span></h3>
+        <div class="cat">AI · NOTES · BY SUPERPWRD</div>
+        <p>말하면 받아적고 AI가 정리하는 음성·텍스트 노트. <b>직접 만들고 매일 쓰는</b> 도구.</p>
+        <div class="bds"><span class="bd live">LIVE</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <a class="ui" href="https://crypto.superpwrd.me" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">crypto.superpwrd.me</span></div>
+        <div class="shot"><iframe src="https://crypto.superpwrd.me" loading="lazy" title="Crypto Trading"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2017<br>NOW</span></div>
+      <div class="txt">
+        <h3><a href="https://crypto.superpwrd.me" target="_blank" rel="noopener">Crypto Trading</a> <span class="out">↗</span></h3>
+        <div class="cat">MARKET · SINCE 2017 · BY SUPERPWRD</div>
+        <p><b>2017년부터 시장 안에서.</b> 읽고, 검증하고, 기록합니다. not financial advice.</p>
+        <div class="bds"><span class="bd live">LIVE</span><span class="bd">9 YEARS</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 3 : MIND -->
+<section class="chapter c-mind">
+  <div class="ch-head rv"><span class="no">CHAPTER 3 — MIND &amp; COMMUNITY</span></div>
+  <div class="rv"><div class="ch-title serif">마음을 나누다</div><div class="ch-sub">혼자 하던 공부가 함께하는 공부가 된 시기.</div></div>
+  <div class="tl">
+
+    <div class="entry rv">
+      <a class="ui" href="https://louiemind.com" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">louiemind.com</span></div>
+        <div class="shot"><iframe src="https://louiemind.com" loading="lazy" title="Louie's Mind Lab"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2024<br>NOW</span></div>
+      <div class="txt">
+        <h3><a href="https://louiemind.com" target="_blank" rel="noopener">Louie's Mind Lab</a> <span class="out">↗</span></h3>
+        <div class="cat">MEDITATION · MINDSET · NEUROSCIENCE</div>
+        <p>마음이 현실이 되는 곳. 명상·마인드셋·우주의 법칙 — 17년 연구의 본진.</p>
+        <div class="bds"><span class="bd live">LIVE</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <a class="ui" href="https://modernmonks.club" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span class="url">modernmonks.club</span></div>
+        <div class="shot"><iframe src="https://modernmonks.club" loading="lazy" title="Modern Monks"></iframe></div>
+      </a>
+      <div class="spine"><span class="dot"></span><span class="yr">2021<br>NOW</span></div>
+      <div class="txt">
+        <h3><a href="https://modernmonks.club" target="_blank" rel="noopener">Modern Monks</a> <span class="out">↗</span></h3>
+        <div class="cat">COMMUNITY · 5 YEARS</div>
+        <p>트레바리 클럽장 '마음으로 창조하라'에서 시작해 독립한 <b>성장 마인드셋 커뮤니티.</b> 함께 읽고, 명상하고, 창조합니다.</p>
+        <div class="bds"><span class="bd gold">5년째</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">교보문고 베스트셀러</span></div>
+        <div class="art a-book">나의 첫<br>NFT 투자수업<small>KYOBO BESTSELLER 2022</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2022</span></div>
+      <div class="txt">
+        <h3>『나의 첫 NFT 투자수업』</h3>
+        <div class="cat">BOOK · 출간</div>
+        <p>교보문고 블록체인/NFT 분야 <b>베스트셀러.</b> 전국 책 강연이 트레바리로, 트레바리가 커뮤니티로 이어진 출발점.</p>
+        <div class="bds"><span class="bd star">BESTSELLER</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 2 : BUILDER -->
+<section class="chapter c-build">
+  <div class="ch-head rv"><span class="no">CHAPTER 2 — WEB3 BUILDER</span></div>
+  <div class="rv"><div class="ch-title serif">직접 짓기 시작하다</div><div class="ch-sub">2018년, 투자하는 쪽에서 만드는 쪽으로.</div></div>
+  <div class="tl">
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">MyHealthWallet</span></div>
+        <div class="art a-health">MyHealthWallet<small>AI · HEALTHCARE · BLOCKCHAIN</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2023</span></div>
+      <div class="txt">
+        <h3>MyHealthWallet</h3>
+        <div class="cat">AI · HEALTHCARE · BLOCKCHAIN</div>
+        <p>'나의 AI 비서' — AI·헬스케어·블록체인 기반 마이헬스월렛 설계·구축.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">food as medicine</span></div>
+        <div class="art a-food">AI 맞춤 식단<small>PERSONALIZED NUTRITION</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2023</span></div>
+      <div class="txt">
+        <h3>AI 맞춤 식단</h3>
+        <div class="cat">AI · FOOD-AS-MEDICINE</div>
+        <p>AI 기반 초개인형 맞춤 식품처방 플랫폼.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">IP universe</span></div>
+        <div class="art a-ip">NFT IP<small>ANIMATION · WEBTOON · GAME</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2022–23</span></div>
+      <div class="txt">
+        <h3>NFT IP Production</h3>
+        <div class="cat">IP · ANIMATION · WEBTOON · GAME</div>
+        <p>NFT IP를 애니메이션·웹툰·게임으로 확장하는 프로덕션 플랫폼.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">web3 webtoon</span></div>
+        <div class="art a-toon">웹3 웹툰<small>CREATOR PLATFORM</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2022</span></div>
+      <div class="txt">
+        <h3>웹3 웹툰 플랫폼</h3>
+        <div class="cat">WEBTOON · WEB3</div>
+        <p>웹3 기반 웹툰 플랫폼 설계·구축. 크리에이터/인플루언서 슈퍼앱 전략자문도 이 시기.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">music × chain</span></div>
+        <div class="art a-millim">Millim:x<small>MUSIC NFT STREAMING</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2021</span></div>
+      <div class="txt">
+        <h3>Millim:x</h3>
+        <div class="cat">MUSIC · NFT · STREAMING — FOUNDER</div>
+        <p>음원 NFT 스트리밍 플랫폼 창업. <b>음악과 기술이 처음 만난 자리.</b></p>
+        <div class="bds"><span class="bd star">FOUNDED</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">unreal engine</span></div>
+        <div class="art a-meta">Metaverse<small>UNREAL · 3 CASUAL GAMES</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2020</span></div>
+      <div class="txt">
+        <h3>메타버스 플랫폼</h3>
+        <div class="cat">UNREAL · METAVERSE · GAMES</div>
+        <p>언리얼 기반 메타버스 플랫폼 설계·구축. 블록체인 캐쥬얼 게임 3종도 이 시기.</p>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">world first</span></div>
+        <div class="art a-dapp">dAppstore<small>BLOCKCHAIN GAME LAUNCHER</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2019</span></div>
+      <div class="txt">
+        <h3>dAppstore</h3>
+        <div class="cat">GAME · LAUNCHER — WORLD FIRST</div>
+        <p><b>최초의 블록체인 게임런처</b> 출시. 블록체인 게임분야 <b>올해의 인물상</b> 수상 (Decentralized People's Award).</p>
+        <div class="bds"><span class="bd star">AWARD 2019</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">1,500,000 downloads</span></div>
+        <div class="art a-browser">탈중앙<br>웹브라우저<small>WEB3 BROWSER + MAINNET</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2018</span></div>
+      <div class="txt">
+        <h3>탈중앙 웹브라우저</h3>
+        <div class="cat">WEB3 · BROWSER · OS</div>
+        <p>블록체인 기반 탈중앙 웹브라우저 출시 — <b>150만 다운로드.</b> 블록체인 메인넷 개발(테스트넷 출시)도 함께.</p>
+        <div class="bds"><span class="bd star">1.5M DOWNLOADS</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 1 : INVESTOR -->
+<section class="chapter c-vc">
+  <div class="ch-head rv"><span class="no">CHAPTER 1 — INVESTOR</span></div>
+  <div class="rv"><div class="ch-title serif">남의 창조를 돕다</div><div class="ch-sub">만들기 전에, 만드는 사람들을 먼저 배웠습니다.</div></div>
+  <div class="tl">
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">220 startups</span></div>
+        <div class="art a-vc">Venture<br>Capital<small>SAMSUNG VENTURES · HYUNDAI CARD</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2012<br>–2018</span></div>
+      <div class="txt">
+        <h3>삼성벤처투자 · 현대카드</h3>
+        <div class="cat">VENTURE CAPITAL</div>
+        <p>초기 스타트업 <b>220개사</b> 투자·사후관리. 삼성전자 C-Lab, 대구/경북창조경제센터 전담 심사역. 현대카드 벤처투자팀장.</p>
+        <div class="bds"><span class="bd gold">220 STARTUPS</span></div>
+      </div>
+    </div>
+
+    <div class="entry rv">
+      <div class="ui"><div class="bar"><i></i><i></i><i></i><span class="url">the seed</span></div>
+        <div class="art a-seed">『시크릿』<small>WHERE IT ALL BEGAN · 2008</small></div>
+      </div>
+      <div class="spine"><span class="dot"></span><span class="yr">2008</span></div>
+      <div class="txt">
+        <h3>『시크릿』, 한 권의 책</h3>
+        <div class="cat">THE SEED</div>
+        <p>모든 것의 시작. 마음이 현실을 만든다는 한 문장을 <b>17년째 검증하며 살고 있습니다</b> — 투자로, 프로덕트로, 커뮤니티로, 음악으로.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <span class="brush">걸어온 길이, 다음 걸음을 말해줍니다.</span>
+  <div class="sig">IN TUNE WITH THE UNIVERSE — NATURAL BUILDER, MANIFESTOR &amp; CREATOR</div>
+  <div><a class="home" href="index.html">홈으로 돌아가기 →</a></div>
+</footer>
+
+</div>
+
+<script>
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
