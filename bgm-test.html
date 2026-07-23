@@ -244,19 +244,18 @@
 .hero-bg iframe{position:absolute;top:50%;left:50%;width:max(100vw,178vh);height:max(56.25vw,102vh);transform:translate(-50%,-50%);border:0;pointer-events:none;}
 .hero-veil{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 900px 600px at 50% 40%, rgba(8,8,15,.5), rgba(8,8,15,.78));}
 #hero.bgm .vshield{position:absolute;inset:0;z-index:2;cursor:pointer;}
-.bgm-center{position:relative;z-index:3;text-align:center;max-width:840px;padding:0 28px;pointer-events:none;transform:translateY(-6vh);}
+.bgm-center{position:relative;z-index:3;text-align:center;max-width:840px;padding:0 28px;pointer-events:none;}
 .bgm-center .handnote{color:#fff;}
 .bgm-center .handnote em{color:#ff8fb3;}
 .bgm-center h1{color:#fff;}
 .bgm-center h1 .grad{background:linear-gradient(95deg,#c9b8ff,#7ee8dc);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.sig-name{font-family:'Nanum Brush Script',cursive;font-size:clamp(26px,3.2vw,36px);color:#fff;transform:rotate(-1.2deg);margin-top:14px;opacity:.95;}
-.bgm-center .creed{color:rgba(255,255,255,.78);margin-top:18px;}
+.bgm-center .creed{color:rgba(255,255,255,.78);}
 .bgm-center .creed b{color:#fff;}
 .bgm-center .hero-tags{justify-content:center;}
 .bgm-center .htag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.85);}
 .bgm-bottom{position:absolute;left:0;right:0;bottom:22px;z-index:4;display:flex;flex-direction:column;gap:10px;align-items:center;padding:0 16px;}
 .bgm-ctl{display:flex;gap:10px;align-items:center;background:rgba(10,10,18,.62);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:8px 10px 8px 8px;color:#fff;max-width:92vw;}
-.bgm-ctl #soundbtn{position:static;width:38px;height:38px;border-radius:99px;border:none;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;animation:pulse2 2.2s ease-in-out infinite;}
+.bgm-ctl #soundbtn{position:static;animation:pulse2 2.2s ease-in-out infinite;}
 .bgm-ctl #nptitle{font-size:12.5px;font-weight:600;max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .bgm-ctl .cbtn{background:transparent;color:#fff;border-color:rgba(255,255,255,.25);}
 .bgm-ctl .cbtn:hover{background:#fff;color:#0a0a12;}
@@ -305,15 +304,14 @@
         </svg>
       </span> &amp; Creator.
     </h1>
-    <div class="sig-name">Louie Hwang</div>
     <p class="creed">
-      AI·블록체인 스타트업을 <b>6번 이상</b> 창업·공동창업했고, 삼성 VC에서 스타트업 <b>220개</b>를 키웠고,<br>
+      삼성 VC에서 스타트업 <b>220개</b>를 키웠고, AI·블록체인 스타트업을 <b>6번 이상</b> 창업·공동창업했고,<br>
       <b>12개</b>의 앱과 서비스를 직접 만들었고, <b>블록체인 저서</b>를 출간했고,<br>
       <b>5년째</b> 마음을 가르치고, <b>2000년부터</b> 음악을 만들어왔습니다.
     </p>
     <div class="hero-tags">
       <span class="htag">INVESTOR</span>
-      <span class="htag">FOUNDER</span>
+      <span class="htag">FOUNDER ×6</span>
       <span class="htag">BUILDER</span>
       <span class="htag">AUTHOR</span>
       <span class="htag">MONK</span>
@@ -322,11 +320,10 @@
   </div>
   <div class="bgm-bottom">
     <div class="bgm-ctl">
-      <button id="soundbtn" title="소리 켜기" aria-label="소리 켜기"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 9v6h4l5 5V4L7 9H3z" fill="#fff"/><line x1="16.5" y1="9.5" x2="21" y2="14" stroke="#fff" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="9.5" x2="16.5" y2="14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button id="soundbtn">🔊 탭해서 소리 켜기</button>
       <b id="nptitle">Seige — 음악을 불러오는 중…</b>
       <button class="cbtn" id="btnPP" title="재생/일시정지">⏸</button>
       <button class="cbtn" id="btnNext" title="다음 곡">⏭</button>
-      <button class="cbtn" id="btnYT" title="유튜브에서 보기"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></button>
     </div>
     <div class="tracks bgmtracks" id="tracks"></div>
   </div>
@@ -578,11 +575,6 @@ document.getElementById('btnPP').addEventListener('click',()=>{
   try{(ytp.getPlayerState()===1)?ytp.pauseVideo():ytp.playVideo();}catch(e){}
 });
 document.getElementById('btnNext').addEventListener('click',()=>{try{ytp.nextVideo();unmuteNow();}catch(e){}});
-document.getElementById('btnYT').addEventListener('click',()=>{
-  let u='https://www.youtube.com/@mcseige';
-  try{const d=ytp.getVideoData();if(d&&d.video_id)u='https://www.youtube.com/watch?v='+d.video_id;}catch(e){}
-  window.open(u,'_blank');
-});
 </script>
 </body>
 </html>
